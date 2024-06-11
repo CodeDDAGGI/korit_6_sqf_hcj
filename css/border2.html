@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .boxmodule {
+            transition: ease-in 5s;
+            width: 300px;
+            height: 200px;
+        }
+
+        .boxmodule:hover{
+            transform:rotate(18000deg);
+        }
+        
+        .box1 {
+            box-sizing: border-box;
+            border: 1px solid black;
+            border-radius: 50px 50px 0px 0px;
+            width: 100px;
+            height: 100px;
+            background-color: pink;
+        }
+
+        .box2 {
+            box-sizing: border-box;
+            background-color: yellow;
+            border-width: 0px 1px 1px 1px;
+            border-radius: 0px 0px 50px 50px;
+            border-style: solid;
+            border-color: black;
+            width: 100px;
+            height: 100px;
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="boxmodule">
+        <div class="box1"></div>
+        <div class="box2"></div>
+    </div>
+</body>
+</html>

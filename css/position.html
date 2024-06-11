@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box1 {
+            /* relative 왼쪽 상단 위가 기준 */
+            position: absolute;/*부모로 기준을 잡아야*/
+            bottom: 100px;
+            box-sizing: border-box;
+            width: 500px;
+            height: 500px;
+            background-color: yellow;
+        }
+
+        .box2 {
+            width: 100px;
+            height: 100px;
+            background-color: red;
+        }
+
+        .box3 {
+            position: absolute;/*자식 요소가 기준에 맞게 움직임*/
+            right:  0px;
+            top: 100px;
+            width: 100px;
+            height: 100px;
+            background-color: blue;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="box1">
+        <div class="box2"></div>
+        <div class="box3"></div>
+    </div>
+</body>
+</html>

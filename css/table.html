@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table {
+            border: 1px solid #dbdbdb;
+            border-collapse:collapse ;
+            text-align: center;
+        }
+
+        td , th {
+            border: 1px solid #dbdbdb;
+        }
+
+        .th1 {  
+            width: 80px;
+        }
+        .th2 {
+            width: 200px;
+        }
+        .th3 {
+            width: 100px;
+        }
+
+        thead th{
+            height: 80px;
+        }
+        tbody td{
+            height: 70px;
+        }
+
+        .number {
+            background-color: red;
+            opacity: 0.5;
+        }
+
+        .name {
+            text-decoration: line-through red;
+        }
+
+        .bg-red {
+            background-color: red;
+        }
+
+        .tc-red {
+            background-color: red;
+        }
+
+        .td-line {
+            text-decoration: line-through;
+        }
+
+        .jb1 {
+            width: 100px;
+            height:100px;
+            background-color: aqua;
+            border: 1px solid black;
+            transition: all ease 1s;
+            margin: 60px auto;
+        }
+        .jb1:hover {
+            transform: rotateY(180deg);
+        }
+
+        .jb2 {
+            margin: 60px auto;
+            width: 100px;
+            height:100px;
+            background-color: red;
+            border: 1px solid black;
+            transition: all ease 30s;
+            border-radius: 5px;
+
+        }
+        .jb2:hover {
+            transform: rotateY(10000000000deg);
+        }
+    </style>
+</head>
+<body>
+    <table>
+        <thead>
+            <tr>
+                <th class="th1">번호</th>
+                <th class="th2">이름</th>
+                <th class="th3">나이</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td class="th1">1</td>
+                <td class="th2">손경태</td>
+                <td class="th3">29</td>
+            </tr>
+            <tr>
+                <td class="th1 number">2</td>
+                <td class="th2 name tc-red td-line">신선애</td>
+                <td class="th3">25</td>
+            </tr>
+            <tr>
+                <td class="th1">3</td>
+                <td class="th2">최단비</td>
+                <td class="th3">29</td>
+            </tr>
+        </tbody>
+    </table>
+    <div class="jb1"></div>
+    <div class="jb2"></div>
+</body>
+</html>
