@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .btn {
+            box-sizing: border-box;
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            background-color: black;
+            transition: all ease 2s 0s;
+        }
+        .main {
+            margin: 100px;
+            border: 1px solid black;
+            padding: 100px;
+        }
+
+
+        .round1 , .round2 , .round3 {
+            position: relative;
+            box-sizing: border-box;
+            margin: 10px;
+            border: 1px solid black;
+            padding: 10px;
+            background-color: green;
+        }
+        
+        .btn:hover > .round1{
+            top: 200px;
+            left: 300px;
+            transition-delay: 5s;
+            background-color: green;
+            display: block;
+        }
+        .btn:hover > .round2{
+            top: 100px;
+            background-color: green;
+            display: block;
+        }
+        .btn:hover > .round3{
+            top: 100px;
+            left: 100px;
+            background-color: green;
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div class="main">
+        <div class="btn">버튼
+            <div class="round1">1</div>
+            <div class="round2">2</div>
+            <div class="round3">3</div>
+        </div>
+    </div>
+
+</body>
+</html>

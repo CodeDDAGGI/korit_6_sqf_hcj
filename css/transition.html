@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box1 {
+            transition: all 3s ease;
+            position: absolute;
+            left: 100px;
+            top: 100px;
+            box-sizing: border-box;
+            border: 3px solid black;
+            width: 100px;
+            height: 100px;
+        }
+
+        .box2{
+            transition: all 5s ease;
+            position: absolute;
+            box-sizing: border-box;
+            border: 3px solid black;
+            left: 1100px;
+            top: 300px;
+            width: 100px;
+            height: 100px;
+        }   
+
+        .left300 {
+            left: 1000px;
+        }
+
+        .top300 {
+            top:300px;
+        }
+
+        .rotete300{
+            /* transform: rotateY(360deg) ; */
+            transform: rotate(18000deg);
+        }
+        
+        .rotete400{
+            left: 400px;
+            top:400px
+        }
+        .rotete500{
+            transform: rotate(18000deg);
+        }
+
+        
+    </style>
+</head>
+<body>
+    <div class="box1"></div>
+    <div class="box2"></div>
+    
+    <button class="move-button">이동</button>
+    <script>
+        const box1 = document.querySelector(".box1");
+        const box2 = document.querySelector(".box2");
+        const moveButton = document.querySelector(".move-button");
+        moveButton.onclick = () => {
+            if(box1.classList.contains("left300")){
+                box1.classList.remove("left300");
+                box1.classList.remove("top300");
+                box1.classList.remove("rotete300");
+                box2.classList.remove("rotete300");
+                return;
+            }
+            box1.classList.add("left300");
+            box1.classList.add("top300");
+            box1.classList.add("rotete300");
+            box2.classList.add("rotete500");   
+            setTimeout(()=>{
+                box1.classList.add("rotete400");
+            },3000)
+        }
+
+
+    </script>
+</body>
+</html>
