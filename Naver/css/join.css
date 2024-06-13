@@ -1,0 +1,211 @@
+.inner {
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    /* flex 안써도 중간 정렬 */
+    margin: 0px auto;
+    width: 500px;
+    height: 100%;
+    background-color: #fafafa;   
+}
+
+/* display:flex 보라색점선 */
+
+.logo-naver {
+    padding: 16px 115px 16px 20px;
+} 
+
+.logo-naver .link::before {
+    display: block;
+    content: "";
+    background-image: url(https://ssl.pstatic.net/static/nid/join/m_sp_06_realname_48b1e603.png);
+    background-size: 372px 326px;
+    background-position: 0 -244px;
+    background-repeat: no-repeat;
+    width: 94px;
+    height: 18px;
+}
+
+.content {
+    /* flex 안에 남은 여백만큼 채워줌 */
+    flex-grow: 1;
+    /* 넘치는 여백만큼 공간을 줄임 flex-shrink */
+    display: flex;
+    padding-top: 30px;
+    justify-content: space-between;
+    flex-direction: column;
+}
+
+.form-content{
+  flex-grow: 1;
+  padding: 0 20px;
+}
+
+.button-submit-wrap{
+    padding: 20px;
+}
+
+.button-submit {
+    width: 100%;
+    padding: 14px 0;
+    border-radius: 6px;
+    border: 1px solid rgba(0, 0, 0, .05);
+    background: #09aa5c;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 22px;
+    color: #fff;
+}
+
+.join-toggle {
+    margin-top: -8px;
+    text-align: right;
+}
+
+.join-toggle label{
+    display: block;
+    position: relative;
+    padding-right: 23px;
+    font-size: 13px;
+    letter-spacing: -0.4;
+    color: #929294;
+    cursor: pointer;
+}
+
+.join-toggle label::after{
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 20px;
+    height: 20px;
+    background-image: url(https://ssl.pstatic.net/static/nid/join/m_sp_06_realname_48b1e603.png);
+    background-size: 372px 326px;
+    background-position: -342px -248px;
+    background-repeat: no-repeat;
+}
+
+.join-toggle input:checked+label::after{
+    background-position: -342px -270px;
+}
+
+.join-toggle input {
+    display: none;
+}
+
+.form-list {
+    position: relative;
+    margin: 10px 0;
+    border-radius: 6px;
+}
+
+.form-item {
+    position: relative;
+    margin-top: -1px;
+}
+
+.form-input {
+    position: relative;
+    box-sizing: border-box;
+    outline: none;
+    border:1px solid #c6c6c6;
+    padding: 0 10px 0 45px;
+    width: 100%;
+    height: 50px;
+    font-size: 16px;
+}
+
+.form-input::-webkit-input-placeholder {
+    font-size: 15px;
+    color: #767678;
+}
+
+.form-input:focus {
+    border: 2px solid #09aa5c;
+    z-index: 10; /* position 포커스가 위치한 div를 최상위로 올려줌 */
+}
+
+.form-list> .form-item:nth-of-type(1) .form-input{
+    border-top-right-radius: 6px;
+    border-top-left-radius: 6px
+}
+.form-list > .form-item:nth-last-of-type(1) .form-input{
+    border-bottom-left-radius: 6px;
+    border-bottom-right-radius: 6px;
+}
+
+.user {
+    padding-right: 91px;
+}
+
+.form-item::after{
+    content: "";
+    position: absolute;
+    top: 10px;
+    right: 9px;
+    /* z-index: 11; */
+    display: block;
+    background-image: url(https://ssl.pstatic.net/static/nid/join/m_sp_06_realname_48b1e603.png);
+    background-size: 372px 326px;
+    background-repeat: no-repeat;
+    width: 30px;
+    height: 30px;
+}
+
+.user-item::after {
+    background-position: -342px -64px;
+}
+
+
+
+.email-item::after {
+    background-position: 96px -296px;
+}
+
+.birthday-item::after {
+    background-position: -192px -296px;
+}
+
+.telecom-item::after {
+    background-position: -224px -296px
+}
+
+.phone-item::after{
+    background-position: -310px -128px;
+}
+
+.user-item::before{
+    content: "@naver.com";
+    position: absolute;
+    transform: translateY(-50%);
+    z-index: 11;
+    top: 50%;
+    right: 12px;
+    color: #767678;
+    font-size: 15px;
+}
+
+.name-item::after{
+    background-position: -342px -64px;
+}
+
+.password-item::after {
+    background-position: -342px -64px;
+}
+
+.password-item::before{
+    content: "";
+    position: absolute;
+    transform: translateY(-50%);
+    z-index: 11;
+    top: 50%;
+    right: 14px;
+    display: block;
+    width: 30px;
+    height: 30px;
+    background-image: url(https://ssl.pstatic.net/static/nid/join/m_sp_06_realname_48b1e603.png);
+    background-size: 372px 326px;
+    background-repeat: no-repeat;
+    background-position: -256px -264px;
+}
+

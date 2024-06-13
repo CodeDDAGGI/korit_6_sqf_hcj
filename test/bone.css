@@ -1,0 +1,119 @@
+
+  
+  .home {
+    box-sizing: border-box;
+    margin: 0px 200px auto;
+  }
+  
+  .home-title a{
+    text-decoration: none;
+    box-sizing: border-box;
+  }
+  
+  .warp-header {
+    width: 100%;
+    border: 1px solid black;
+  }
+  
+  
+  .warp-header-nav ul{
+    display: flex;
+    justify-content: flex-end;
+    border: 1px solid black;
+    }
+    
+  
+  .join-membership{
+    margin-right: 10px;
+  }
+  
+  .home-title {
+    box-sizing: border-box;
+    border: 1px solid black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+
+  
+    .home-menu li a:hover{
+      color: rgb(184, 182, 183);
+      background-color: #dbdbdb;
+    }
+  
+    main{
+      box-sizing: border-box;
+      width: 100%; 
+      border: 1px solid black;
+    }
+  
+    .home-main-container{
+      box-sizing: border-box;
+      height: 100%;
+      width: 100%;
+    }
+  
+    .search-input {
+      box-sizing: border-box;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 20%;
+      width: 100%;
+    }
+  
+    .search {
+      box-sizing: border-box;
+      border-radius: 40px;
+      font-size: 30px;
+      padding: 20px 60px 20px 20px;
+      height: 50px;
+      width: 50%;
+    }
+  
+    .search-result {
+      box-sizing: border-box;
+      right: 100px;
+      top: 50%;
+      box-sizing: border-box;
+      border-radius:40px;
+      background-color: transparent;
+      width: 80px;
+      height: 50px;
+    }
+  
+    .home-display-1 {
+        box-sizing: border-box;
+        width: 100%;
+        height: 40%;
+        border: 1px solid black;
+        display: flex;
+    }
+    .home-display-2 {
+        box-sizing: border-box;
+        width: 100%;
+        height: 40%;
+        border: 1px solid black;
+        display: flex;
+    }
+
+    .home-display-1-1, .home-display-1-2 {
+        width: 50%;      
+        box-sizing: border-box;
+        border: 1px solid black;
+    }
+
+    .home-display-2-1 , .home-display-2-2 {
+        width: 50%;
+        box-sizing: border-box;
+        border: 1px solid black;
+    }
+
+    .home-footer {
+        height: 300px;
+        width: 100%;
+        border: 1px solid black;
+    }
+
+
