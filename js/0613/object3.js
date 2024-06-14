@@ -26,12 +26,10 @@ function main() {
 
     const userList = [ user, newUser]; // 주소 100 
     const newUserList = [...userList , newUser2]; // 주소 200 값만 복사
-    console.log(" ")
     console.log(userList);
     console.log(newUserList);
 
     const [ a, b ,c ] = newUserList;
-    console.log(" ")
     console.log(a);
     console.log(b);
     console.log(c);
