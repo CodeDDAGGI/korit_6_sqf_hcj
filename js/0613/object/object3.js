@@ -24,10 +24,15 @@ function main() {
     const newUser2 = modifyUser(newUser, "password" , "1111");
     console.log(newUser2)
 
+    console.log("jump");
+    
     const userList = [ user, newUser]; // 주소 100 
-    const newUserList = [...userList , newUser2]; // 주소 200 값만 복사
     console.log(userList);
+    console.log("jump");
+    const newUserList = [userList , newUser2]; // 주소 200 값만 복사
     console.log(newUserList);
+
+    console.log("jump");
 
     const [ a, b ,c ] = newUserList;
     console.log(a);
@@ -35,12 +40,12 @@ function main() {
     console.log(c);
     console.log(newUserList);
     const { username , password } = newUserList[0];
-    console.log(" ")
-    console.log("jump")
-    console.log(username)
-    console.log(password)
-    console.log(newUserList[0])
-    console.log("jump")
+
+    console.log("jump");
+    console.log(username);
+    console.log(password);
+    console.log(newUserList[0]);
+    console.log("jump");
     
     // console.log(newUser === newUser2);
     // console.log(userList === newUserList);
@@ -48,7 +53,7 @@ function main() {
     //  스프레드 -> 깊은 복사 주소값을 새로운 주소값으로 만들어서 안에 들어있는 값만 복사
 
     const userList2 = userList; // 얕은 복사(주소값이 같음)
-    console.log(newUserList)
+    console.log(userList2)
 }
 
 main();

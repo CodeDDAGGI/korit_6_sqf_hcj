@@ -27,7 +27,7 @@ console.log(!num2);
     
 */
 
-var num = 0;
+let num = 0;
 console.log(!!num);
 var str = "";
 console.log(!!str);
