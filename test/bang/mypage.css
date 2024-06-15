@@ -1,0 +1,66 @@
+.body-mypage {
+  width: 1100px;
+  height: 100%;
+  margin: 0 auto;
+  border: 1px solid black;
+}
+
+.mypage {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.mypage-logo {
+  width: 100%;
+}
+
+.mypage-container {
+  display: flex;
+  justify-content: end;
+}
+
+.mypage-container {
+}
+
+.mypage-container ul li {
+  height: 20px;
+  width: 100px;
+  text-align: center;
+}
+
+.mypage-container ul li a {
+  padding: 0 15px;
+}
+
+.logo {
+  border: 1px solid black;
+  box-sizing: border-box;
+  height: 100px;
+  text-align: center;
+}
+
+.logo a {
+  box-sizing: border-box;
+  padding: 30px 45px;
+  font-size: 40px;
+  border: 1px solid black;
+}
+
+.menu-ul {
+  height: 50px;
+  display: flex;
+  justify-content: space-around;
+  align-items: end;
+  border-bottom: 1px solid black;
+}
+
+.menu-ul li {
+  font-size: 30px;
+  cursor: pointer;
+}
+
+.menu-ul li:hover {
+  color: rgb(147, 199, 87);
+  background-color: #dbdbdb;
+}
