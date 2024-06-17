@@ -91,8 +91,6 @@ function handleUserInputKeyDown(e) {
             passwordInput.value = emptyUser.password;
 
             nameInput.focus();
-            
-            
 
             saveUserList();
             
@@ -107,7 +105,7 @@ function saveUserList() {
 }
 
 function loadUserList() {
-    const lsUserList = localStorage.getItem("userList");[]
+    const lsUserList = localStorage.getItem("userList");
     userList = !lsUserList ? [] : JSON.parse(lsUserList);
     renderTable();
 }
@@ -137,8 +135,23 @@ function getNewid() {
 // 체크된 box가 있으면
 // input의 속성값 name이랑 일치하게 넣어주기             
 function handleUserCheck(e) {
-    const checkedbtn = document.querySelectorAll("input[type='checkbox']");
-    console.log(checkedbtn);
-    const check = checkedbtn.forEach(()=> e.target.checked);
-    console.log(check);
+    const checkedBoxList = document.querySelectorAll("input[type='checkbox']");
+    
+    if (e.target.type === 'checkbox') {
+        const clickedCheckbox = e.target;
+    for(let i = 0; i < checkedBoxList.length; i++){
+        const checkbox = checkedBoxList[i];
+        if(e.target.checked === checkbox){
+            continue;
+        }
+        checkbox.checked = false;
+        
+        if (clickedCheckbox.checked) {
+            const inputName = checkbox.getAttribute('name');
+            const inputValue = clickedCheckbox.checked ? inputName : '';
+            document.querySelector(`input[name='${inputName}']`).value = inputValue;
+            }
+        }
+    }
+    
 }   

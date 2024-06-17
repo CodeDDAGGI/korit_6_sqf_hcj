@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+
+  <div class="button01">
+    <button onclick="handleButtonClick(event)" value="+">버튼1</button>
+  </div>
+  <div class="button02">
+    <button onclick="handleButtonClick(event)" value="-">버튼2</button>
+  </div>
+  <div class="count">
+    0
+  </div>
+
+  <script>
+    const dom1 = document.getElementsByTagName("body")[0];
+    const dom2 = dom1.getElementsByClassName("button01");
+    const dom3 = dom1.getElementsByClassName("button02") ;
+
+
+    function handleButtonClick(e) {
+      console.log(e);
+      const count1 = document.querySelector(".count")
+      const [dom2 , dom3] = document.querySelectorAll("button");
+      
+      alert(`button1 : ${dom2.value} , button2 : ${dom3.value}`);
+
+    }
+  </script>
+</body>
+</html>

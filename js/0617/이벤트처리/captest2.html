@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    html, body{
+      width: 100%;
+      height: 100%;
+    }
+    .outer {
+            background-color: lightblue;
+            padding: 50px;
+            text-align: center;
+            cursor: pointer;
+        }
+        .middle {
+            background-color: green;
+            padding: 50px;
+            text-align: center;
+            cursor: pointer;
+          }
+        .inner {
+            background-color: coral;
+            padding: 50px;
+            text-align: center;
+            cursor: pointer;
+        }
+        div:hover {
+            background-color: white;
+        }
+        .score {
+          width: 100%;
+          font-size: 30px;
+          color: cadetblue;
+        }
+  </style>
+</head>
+<body>
+  <div class="score">0</div>
+  <div class="outer">
+    외부 box
+    <div class="middle">
+        중간 box
+        <div class="inner">
+            내부 box
+        </div>
+    </div>
+</div>
+
+<script>
+  const outer = document.querySelector(".outer");
+  const middle = document.querySelector(".middle");
+  const inner = document.querySelector(".inner");
+  const scoreElement = document.querySelector(".score");
+  let score = 0;
+  function setScore(newScore) {
+            score = newScore;
+            scoreElement.textContent = `Score: ${score}`;
+        }
+
+  // 각 클릭 이벤트에서 점수를 증가시킴
+  outer.addEventListener("click", () => {
+      setScore(score + 1);
+  });
+
+  middle.addEventListener("click", () => {
+      setScore(score + 2);
+  });
+
+  inner.addEventListener("click", () => {
+      setScore(score + 3);
+  });
+
+
+</script>
+</body>
+</html>
