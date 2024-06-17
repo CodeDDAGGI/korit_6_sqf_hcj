@@ -13,7 +13,6 @@ function printUser2({username, password , name , email}){
     console.log(`비밀번호: ${password}`);
     console.log(`이름: ${name}`);
     console.log(`이메일: ${email}`);
-
 }
 
 function main() {

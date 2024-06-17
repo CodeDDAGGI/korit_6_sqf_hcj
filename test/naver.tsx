@@ -38,7 +38,8 @@ export default function Naver() {
         width:'768px',
       }}>
         <div>
-        <div style={{
+        <di
+          style={{
           display:'flex',
           justifyContent:'flex-end'
         }}>
@@ -57,7 +58,7 @@ export default function Naver() {
               <option value="ko">中文(简体)</option>
               <option value="ko">中文</option>
           </select>
-        </div>
+        </di>
       </div>
 
         <div>

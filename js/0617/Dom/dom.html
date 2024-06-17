@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="main-box">
+        <div id="input1">
+            <input type="text" placeholder="name">
+        </div>
+        <div id="input2">
+            <input type="text" placeholder="age">
+        </div>
+    </div>
+    <div>
+        <button onclick="handleButtonClick(event)">확인</button>
+        <button onclick="button.onclick(event)">확인</button>
+    </div>
+    <script>
+        // Elements => 배열 1개뿐이라 0번 인덱스
+        const bodyList = document.getElementsByTagName("body");
+        const body = bodyList[0];
+        const divList = document.getElementsByTagName("div");
+        const mainBoxList = body.getElementsByClassName("main-box"); // 선택자로 className을 가져옴
+        const input1 = mainBoxList[0]
+                .getElementsByTagName("div")[0]
+                .getElementsByTagName("input")[0];
+        const input1_1 = document.getElementsByTagName("input")[0];
+        const input1_1_1 = document.getElementById("input1").getElementsByTagName("input")[0];                
+        const  [ input1_1_2 ] = document.getElementById("input1").getElementsByTagName("input");                
+        
+
+
+        console.log(bodyList);
+        console.log({body}); // {변수} 변수명이 키값이 댐
+        console.log({mainBox: divList[0]});
+        console.log(mainBoxList);
+        console.log(mainBoxList[0]);
+        console.log({mainBox:mainBoxList[0]});
+        console.log(input1);
+        console.log(input1_1);
+        console.log(input1_1_1);
+        console.log(input1_1_2);
+        
+        const button = document.querySelector("button");
+        console.log(button.getAttribute("onclick"));
+        console.log(button.setAttribute("onclick" , "alert('test')"));
+        console.log(button.onclick)
+
+        button.onclick = () => { // 버튼 객체를 가져와 정의
+            alert("test2");
+        }
+
+        button.onclick = handleButtonClick;
+
+        button.onclick = (e) =>{
+            console.log(e);
+            const [ input_1, input_2 ] = document.querySelectorAll("input"); // 비구조화 할당
+            
+            alert(`name : ${input1.value} , \n age : ${input_2.value}`);
+            alert(inputList[0].value);
+            alert(inputList[1].value); 
+        }
+
+        //////////////////////////////////////////////////////////////////////////////////////
+
+        // << QuerySelector >>
+
+        const input1_1_1_1 = document.querySelector("body #input1 > input");
+        console.log(input1_1_1_1);
+        const inputList = document.querySelectorAll("input")
+        console.log(inputList);
+        const input1_1_1_1_1 = document.querySelector("input"); //  == [0]
+        console.log(input1_1_1_1_1);
+
+        
+        function handleButtonClick(e){
+            console.log(e);
+            const [ input_1, input_2 ] = document.querySelectorAll("input"); // 비구조화 할당
+            
+            alert(`name : ${input1.value} , \n age : ${input_2.value}`);
+            alert(inputList[0].value);
+            alert(inputList[1].value); 
+        }
+    </script>
+</body>
+</html>
