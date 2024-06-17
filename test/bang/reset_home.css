@@ -1,0 +1,21 @@
+html ,body {
+    height: 1500px;
+}
+
+body ,h1 ,ul , ol , button {
+    margin: 0;
+    padding: 0;
+}
+
+ul{
+    list-style-type: none;
+}
+
+button {
+    cursor: pointer;
+}
+
+a {
+    text-decoration: none;
+    cursor: pointer;
+}

@@ -31,4 +31,3 @@ console.log(user.username)
 console.log(user.password)
 user.print()
 
-

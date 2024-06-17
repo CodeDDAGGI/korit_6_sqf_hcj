@@ -32,7 +32,8 @@ function main() {
     // rest변수이기 때문에 아무 변수명이나 가능
     const { name, ...rest} = user;
     // let{name , ...rest} = user; 동일
-    console.log(rest)
+    console.log(name);
+    console.log(rest);
 
     console.log(names.slice(1,3)); // index[1] ~ index[2] 3전까지
 }

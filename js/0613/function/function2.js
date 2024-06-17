@@ -9,7 +9,7 @@ function login (username, password){
    console.log("로그인 실패");
 }
 
-login("","");
+login("admin","1234");
 const login2 = login;
 login2("admin" , "1234");
 
@@ -21,7 +21,7 @@ const add2 = function add(x, y){
 const sub2 = function (x , y){
     return x - y;
 }
-
+console.log(add2(30, 20));
 console.log(sub2(20, 10));
 
 // 화살표 함수(람다)
