@@ -1,5 +1,8 @@
+// checked 활용
 // inputMode = 1 > 추가
 // inputMode = 2 > 수정
+
+// CRDU (create , remove , delete , update)
 let inputMode = 1;
 
 const names = [ "김준일" , "김준이" , "김준삼" ];
@@ -25,8 +28,8 @@ function renderTable() {
                 
         // index는 문법 , {username, password} 비구조화 할당
         return `
-            <tr>
-                <th><input type="checkbox" onchange="handleUserCheck(event)"></th>
+            <tr> 
+                <th><input type="checkbox" onchange="handleUserCheck(event)" value="${id}"></th>
                 <td>${index + 1}</td>
                 <td>${id}</td>
                 <td>${name}</td>
@@ -35,7 +38,6 @@ function renderTable() {
                 <th><button  onclick="deleteUser(event)" value="${id}">삭제</button></th>
             </tr>
          `;
-
     }).join("");
 }
 
@@ -43,13 +45,13 @@ function renderTable() {
 function handleUserInputKeyDown(e) {
     user = {
         ...user,
-        [e.target.name]: e.target.value
+        [e.target.name]: e.target.value // emptyUser name(키) : 값 대입하게끔
     } // ...user로 새로운 주소를 만들땐 밑에 스프레드로 정의할 필요없음
-    user[e.target.name] = e.target.value;
+
+    // user[e.target.name] = e.target.value;
     
     console.log(user);
     
-
     if(e.keyCode === 13) {
         const nameInput = document.querySelector(".name-input");
         // const body = document.querySelector("body");
@@ -82,19 +84,36 @@ function handleUserInputKeyDown(e) {
                 alert("비밀번호를 넣어주세요")
                 return
             }
-            userList = [ ...userList, {...user , id: getNewid()}];
+            if(inputMode === 1){
+                    //     const newUser ={
+                    //         ...user,
+                    //         id:getNewid()
+                    //     };
+                    //     userList = [ ...userList , newUser ];
+                userList = [ ...userList, {...user , id: getNewid()}];
+            }
+
+            if(inputMode === 2){
+                let findIndex = -1;
+                for(let i = 0; i < userList.length; i++) {
+                    if(userList[i].id === user.id){
+                        findIndex = i;
+                        break;
+                    }
+                }
+                if(findIndex === -1){
+                    alert("사용자 정보 수정 중 오류 발생. 관리자에게 문의하세요.");
+                    return;
+                }
+                userList[findIndex] = user;
+            }
             console.log(userList);
 
-
-            nameInput.value = emptyUser.name;
-            usernameInput.value = emptyUser.username;
-            passwordInput.value = emptyUser.password;
+            saveUserList();
+            renderTable();
+            clearInputValue();
 
             nameInput.focus();
-
-            saveUserList();
-            
-            renderTable();
         }
     }
     console.log(e.target.name);
@@ -112,14 +131,15 @@ function loadUserList() {
 
 function deleteUser(e) { // index로 지우는거 보다 키값으로 지우는 걸 권장
     userList = userList.filter(({id}) => id !== parseInt(e.target.value)); 
+    //                    user.id
     saveUserList();
     renderTable();
 
 };
 
 function getNewid() {
-    const userIds = userList.map(user => user.id).sort();
-    const maxUserId = userIds.length === 0 ? 20240000 : Math.max.apply(null, userIds); 
+    const userIds = userList.map(user => user.id);
+    const maxUserId = userIds.length === 0 ? 20240000 : Math.max.apply(null, userIds); // null 고정값 , 배열의 값을 넣으면 가장 큰 값 구해줌 
     console.log(maxUserId);
     return maxUserId + 1;
 }
@@ -134,24 +154,70 @@ function getNewid() {
 //      checkbox.checked = false; 
 // 체크된 box가 있으면
 // input의 속성값 name이랑 일치하게 넣어주기             
-function handleUserCheck(e) {
-    const checkedBoxList = document.querySelectorAll("input[type='checkbox']");
+// function handleUserCheck(e) {
+//     const checkedBoxList = document.querySelectorAll("input[type='checkbox']");
     
-    if (e.target.type === 'checkbox') {
-        const clickedCheckbox = e.target;
-    for(let i = 0; i < checkedBoxList.length; i++){
-        const checkbox = checkedBoxList[i];
-        if(e.target.checked === checkbox){
+//     if (e.target.type === 'checkbox') {
+//     for(let i = 0; i < checkedBoxList.length; i++){
+//         const checkbox = checkedBoxList[i];
+//         if(e.target.checked === checkbox){
+//             continue;
+//         }
+//         checkbox.checked = false;
+        
+//         if (clickedCheckbox.checked) {
+//             const inputName = checkbox.getAttribute('name');
+//             const inputValue = checkedBoxList.checked ? inputName : '';
+//             document.querySelector(`input[name='${inputName}']`).value = inputValue;
+//             }
+//         }
+//     }
+    
+// }  
+
+function handleUserCheck(e){
+    const checkBoxList = document.querySelectorAll("input[type='checkbox']");
+    console.log(checkBoxList);
+    for(let checkBox of checkBoxList){
+        if(checkBox === e.target) {
             continue;
         }
-        checkbox.checked = false;
-        
-        if (clickedCheckbox.checked) {
-            const inputName = checkbox.getAttribute('name');
-            const inputValue = clickedCheckbox.checked ? inputName : '';
-            document.querySelector(`input[name='${inputName}']`).value = inputValue;
-            }
-        }
+        checkBox.checked = false;
     }
+
+    if(e.target.checked) {
+        inputMode = 2;
+        const [findUser] = userList.filter(user => user.id === parseInt(e.target.value)); //?
+        setInputValue(findUser);
+        user = {
+            ...findUser
+        }
+
+        return;
+    }
+
+    clearInputValue();
+}
+
+function setInputValue(user) {
+    const nameInput = document.querySelector(".name-input");
+    const usernameInput = document.querySelector(".username-input");
+    const passwordInput = document.querySelector(".password-input");
+    nameInput.value = user.name;
+    usernameInput.value = user.username;
+    passwordInput.value = user.password;
+}
+
+function clearInputValue() {
+    const nameInput = document.querySelector(".name-input");
+    const usernameInput = document.querySelector(".username-input");
+    const passwordInput = document.querySelector(".password-input");
+    nameInput.value = emptyUser.name;
+    usernameInput.value = emptyUser.username;
+    passwordInput.value = emptyUser.password;
     
-}   
+    inputMode = 1;
+    user = { 
+        ...emptyUser
+    }
+}
