@@ -22,7 +22,7 @@ function addTodo() {
     const todo = {
         id:createNewId(),
         content: document.querySelector(".todo-input").value,
-        date : trasformDate(new Date())
+        date : transformDate(new Date())
     }
  
     todoList = [ ...todoList , todo ];
@@ -74,7 +74,7 @@ function isBlank(input) {
     return !input.value.replaceAll(" ", "");
 }
 
-function trasformDate(date) {
+function transformDate(date) {
     const dayList = [ "일" ,"월" , "화" , "수" , "목", "금" , "토"];
     return `${date.getFullYear()}.${date.getMonth() + 1}.${date.getDate()}.(${dayList[date.getDay()]}) ${date.getHours()}:${date.getSeconds()}`;
 }
@@ -114,7 +114,7 @@ function handleEditOkClick(e){
             return {
                 ...todo,
                 content: document.querySelector(".modal  .todo-input").value,
-                date: trasformDate  (new Date)
+                date: transformDate  (new Date)
             }
             
         }

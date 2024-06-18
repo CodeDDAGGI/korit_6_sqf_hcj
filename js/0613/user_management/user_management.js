@@ -187,7 +187,7 @@ function handleUserCheck(e){
 
     if(e.target.checked) {
         inputMode = 2;
-        const [findUser] = userList.filter(user => user.id === parseInt(e.target.value)); //?
+        const [findUser] = userList.filter(user => user.id === parseInt(e.target.value));  
         setInputValue(findUser);
         user = {
             ...findUser
